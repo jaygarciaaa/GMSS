@@ -1,0 +1,90 @@
+GMSS/
+├─ .venv/                      # Python virtual environment
+|
+├─ config/                     # Django project configuration
+│   ├─ __pycache__/
+│   ├─ __init__.py
+│   ├─ asgi.py
+│   ├─ settings.py             # Main Django settings
+│   ├─ urls.py                 # Project-level routes
+│   └─ wsgi.py
+│
+├─ core/                       # Reusable utilities, helpers, custom middlewares
+│   ├─ __init__.py
+│   ├─ models.py               # Shared abstract models
+│   ├─ payments.py             # Common payment helpers (still optional)
+│   ├─ tasks.py                # Celery tasks / background jobs
+│   └─ utils.py                # Helper functions
+│
+├─ dashboard/                  # Main client-facing dashboard
+│   ├─ templates/dashboard/
+│   ├─ __init__.py
+│   ├─ urls.py
+│   └─ views.py                # Overview dashboard
+│
+├─ media/                      # Uploaded files (profile pics, receipts, etc.)
+│
+├─ memberships/                # Handles gym membership subscriptions
+│   ├─ templates/memberships/  # HTML for memberships
+│   ├─ __init__.py
+│   ├─ admin.py
+│   ├─ apps.py
+│   ├─ forms.py
+│   ├─ models.py               # Membership model (user, plan, start, end, status)
+│   ├─ tests.py
+│   ├─ signals.py              # Auto-update subscription end dates, reminders
+│   ├─ urls.py
+│   └─ views.py
+│
+├─ metrics/                    # Sales & revenue dashboards (renamed from analytics)
+│   ├─ templates/metrics/      # Graphs, tables
+│   ├─ __init__.py
+│   ├─ admin.py
+│   ├─ apps.py
+│   ├─ urls.py
+│   ├─ utils.py                # Chart data generators
+│   └─ views.py                # Revenue charts, reports
+│
+├─ payments/                   # Online payments module
+│   ├─ templates/payments/     # Payment forms/pages
+│   ├─ __init__.py
+│   ├─ admin.py
+│   ├─ apps.py
+│   ├─ models.py               # Payment transactions, logs
+│   ├─ tests.py
+│   ├─ services/               # API integration layer
+│   │   ├─ gcash.py
+│   │   ├─ gotyme.py
+│   │   ├─ instapay.py
+│   │   └─ paypal.py
+│   ├─ urls.py
+│   └─ views.py
+│
+├─ static/                     # CSS, JS, images
+│   └─ global/                 # API integration layer
+|       ├─ css/
+|       ├─ img/
+|       └─ js/
+│
+├─ templates/                  # Global templates (base.html, layouts)
+│   ├─ includes/
+│   └─ base.html
+│
+├─ users/                      # Custom User & Authentication
+│   ├─ templates/users/
+│   ├─ __init__.py
+│   ├─ admin.py
+│   ├─ apps.py
+│   ├─ forms.py
+│   ├─ models.py               # Extend Django user (profile, role, etc.)
+│   ├─ tests.py
+│   ├─ urls.py
+│   └─ views.py
+│
+├─ .env
+├─ .file_structure
+├─ .gitignore
+├─ .notes
+├─ manage.py
+├─ README.md
+└─ requirements.txt

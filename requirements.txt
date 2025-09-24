@@ -1,0 +1,6 @@
+# Refer to settings.py INSTALLED APPS []
+djangorestframework
+django-crispy-forms
+crispy-bootstrap5
+django-filter
+django-extensions
