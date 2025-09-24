@@ -1,80 +1,90 @@
 GMSS/
 ├─ .venv/                      # Python virtual environment
+|
 ├─ config/                     # Django project configuration
+│   ├─ __pycache__/
 │   ├─ __init__.py
+│   ├─ asgi.py
 │   ├─ settings.py             # Main Django settings
 │   ├─ urls.py                 # Project-level routes
-│   ├─ wsgi.py
-│   └─ asgi.py
-│    
+│   └─ wsgi.py
+│
 ├─ core/                       # Reusable utilities, helpers, custom middlewares
 │   ├─ __init__.py
 │   ├─ models.py               # Shared abstract models
-│   ├─ utils.py                # Helper functions
 │   ├─ payments.py             # Common payment helpers (still optional)
-│   └─ tasks.py                # Celery tasks / background jobs
+│   ├─ tasks.py                # Celery tasks / background jobs
+│   └─ utils.py                # Helper functions
+│
+├─ dashboard/                  # Main client-facing dashboard
+│   ├─ templates/dashboard/
+│   ├─ __init__.py
+│   ├─ urls.py
+│   └─ views.py                # Overview dashboard
+│
+├─ media/                      # Uploaded files (profile pics, receipts, etc.)
 │
 ├─ memberships/                # Handles gym membership subscriptions
+│   ├─ templates/memberships/  # HTML for memberships
 │   ├─ __init__.py
 │   ├─ admin.py
 │   ├─ apps.py
-│   ├─ models.py               # Membership model (user, plan, start, end, status)
-│   ├─ views.py
-│   ├─ urls.py
 │   ├─ forms.py
+│   ├─ models.py               # Membership model (user, plan, start, end, status)
+│   ├─ tests.py
 │   ├─ signals.py              # Auto-update subscription end dates, reminders
-│   └─ templates/memberships/  # HTML for memberships
+│   ├─ urls.py
+│   └─ views.py
+│
+├─ metrics/                    # Sales & revenue dashboards (renamed from analytics)
+│   ├─ templates/metrics/      # Graphs, tables
+│   ├─ __init__.py
+│   ├─ admin.py
+│   ├─ apps.py
+│   ├─ urls.py
+│   ├─ utils.py                # Chart data generators
+│   └─ views.py                # Revenue charts, reports
 │
 ├─ payments/                   # Online payments module
+│   ├─ templates/payments/     # Payment forms/pages
 │   ├─ __init__.py
 │   ├─ admin.py
 │   ├─ apps.py
 │   ├─ models.py               # Payment transactions, logs
-│   ├─ views.py
-│   ├─ urls.py
+│   ├─ tests.py
 │   ├─ services/               # API integration layer
 │   │   ├─ gcash.py
 │   │   ├─ gotyme.py
-│   │   ├─ paypal.py
-│   │   └─ instapay.py
-│   └─ templates/payments/     # Payment forms/pages
-│
-├─ analytics/                  # Sales & revenue dashboards
-│   ├─ __init__.py
-│   ├─ admin.py
-│   ├─ apps.py
-│   ├─ views.py                # Revenue charts, reports
+│   │   ├─ instapay.py
+│   │   └─ paypal.py
 │   ├─ urls.py
-│   ├─ utils.py                # Chart data generators
-│   └─ templates/analytics/    # Graphs, tables
-│
-├─ users/                      # Custom User & Authentication
-│   ├─ __init__.py
-│   ├─ admin.py
-│   ├─ apps.py
-│   ├─ models.py               # Extend Django user (profile, role, etc.)
-│   ├─ forms.py
-│   ├─ views.py
-│   ├─ urls.py
-│   └─ templates/users/
-│
-├─ dashboard/                  # Main client-facing dashboard (already exists)
-│   ├─ __init__.py
-│   ├─ views.py                # Overview dashboard
-│   ├─ urls.py
-│   └─ templates/dashboard/
+│   └─ views.py
 │
 ├─ static/                     # CSS, JS, images
-│   ├─ css/
-│   ├─ js/
-│   └─ img/
+│   └─ global/                 # API integration layer
+|       ├─ css/
+|       ├─ img/
+|       └─ js/
 │
 ├─ templates/                  # Global templates (base.html, layouts)
-│   ├─ base.html
-│   └─ includes/
+│   ├─ includes/
+│   └─ base.html
 │
-├─ media/                      # Uploaded files (profile pics, receipts, etc.)
+├─ users/                      # Custom User & Authentication
+│   ├─ templates/users/
+│   ├─ __init__.py
+│   ├─ admin.py
+│   ├─ apps.py
+│   ├─ forms.py
+│   ├─ models.py               # Extend Django user (profile, role, etc.)
+│   ├─ tests.py
+│   ├─ urls.py
+│   └─ views.py
 │
+├─ .env
+├─ .file_structure
 ├─ .gitignore
+├─ .notes
 ├─ manage.py
-└─ README.md
+├─ README.md
+└─ requirements.txt

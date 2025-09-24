@@ -39,10 +39,10 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     
     # GMSS apps
-    "analytics",
     "core",
     "dashboard",
     "memberships",
+    "metrics",
     "payments",
     "users",
     
