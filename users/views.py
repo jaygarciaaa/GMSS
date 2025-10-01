@@ -1,4 +1,4 @@
 from django.shortcuts import render
 
-def users_base(request):
+def base(request):
     return render(request, "users/base.html")
