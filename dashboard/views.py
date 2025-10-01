@@ -1,4 +1,4 @@
 from django.shortcuts import render
 
-def dashboard_base(request):
+def base(request):
     return render(request, "dashboard/base.html")
